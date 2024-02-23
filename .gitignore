@@ -1,0 +1,4 @@
+.cache
+# .DS_Store 맥용
+node_modules
+dist
