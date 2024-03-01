@@ -40,7 +40,7 @@ module.exports = {
         test: /\.s?css$/, // 정규표현식: .scss 또는 .css로 끝나는 글자를 찾기
         use: [   // 순서 중요. style부터 작성해야 함.
           'vue-style-loader',
-          'style-loader', // css내용을 해석해서 style을 입혀줌.
+          //'style-loader', // css내용을 해석해서 style을 입혀줌.
           'css-loader', //main.js에서 import로 css파일 가져오게 코딩했음. js에서는 css파일 해석을 못하므로 가능하게 리딩할수있게 하는 명령어.
           'postcss-loader',
           'sass-loader' 
@@ -48,6 +48,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/, // 제외할 경로
         use: [
           'babel-loader'
         ]
